@@ -1,0 +1,23 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "spanner": "https://cloud.google.com/spanner/docs/reference/rest/v1/",
+    "gcloud": "https://cloud.google.com/apis/",
+    "Instance": "spanner:projects.instances",
+    "Database": "spanner:projects.instances.databases",
+    "Session": "spanner:projects.instances.databases.sessions",
+    "Backup": "spanner:projects.instances.backups",
+    "name": "schema:name",
+    "displayName": "schema:alternateName",
+    "description": "schema:description",
+    "state": "spanner:state",
+    "config": "spanner:instanceConfig",
+    "nodeCount": "spanner:nodeCount",
+    "processingUnits": "spanner:processingUnits",
+    "labels": "schema:keywords",
+    "createTime": "schema:dateCreated",
+    "updateTime": "schema:dateModified",
+    "databaseDialect": "spanner:databaseDialect",
+    "project": "gcloud:project"
+  }
+}

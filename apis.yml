@@ -1,0 +1,53 @@
+name: Google Cloud Spanner
+description: >-
+  Google Cloud Spanner is a fully managed, mission-critical relational database
+  service that offers transactional consistency at global scale, automatic
+  synchronous replication, and schemas with SQL support. It combines the benefits
+  of relational database structure with non-relational horizontal scale, providing
+  up to 99.999% availability.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/google-cloud-spanner/refs/heads/main/apis.yml
+created: '2026-03-13'
+modified: '2026-03-13'
+specificationVersion: '0.18'
+tags:
+- Database
+- Relational
+- SQL
+- Distributed
+- Google Cloud
+apis:
+- name: Cloud Spanner API
+  description: >-
+    The Cloud Spanner API provides programmatic access to manage Cloud Spanner
+    instances, databases, and sessions. It supports creating and configuring
+    globally distributed database infrastructure, executing SQL queries and DML
+    statements, managing transactions with strong consistency guarantees, and
+    handling database backups and restore operations.
+  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  humanURL: https://cloud.google.com/spanner/docs
+  baseURL: https://spanner.googleapis.com/v1
+  tags:
+  - Database
+  - Instances
+  - SQL
+  - Transactions
+  properties:
+  - type: Documentation
+    url: https://cloud.google.com/spanner/docs/reference/rest
+  - type: OpenAPI
+    url: openapi/cloud-spanner-openapi.yml
+  - type: JSONSchema
+    url: json-schema/instance-schema.json
+common:
+- type: GettingStarted
+  url: https://cloud.google.com/spanner/docs/getting-started/rest
+- type: Pricing
+  url: https://cloud.google.com/spanner/pricing
+- type: Authentication
+  url: https://cloud.google.com/spanner/docs/authentication
+- type: JSON-LD
+  url: json-ld/google-cloud-spanner-context.jsonld
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

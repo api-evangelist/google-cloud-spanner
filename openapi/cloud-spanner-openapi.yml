@@ -1,0 +1,503 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Spanner API
+  description: >-
+    The Cloud Spanner API provides programmatic access to Google Cloud Spanner,
+    a globally distributed, strongly consistent relational database service. It
+    enables management of instances, databases, sessions, and execution of SQL
+    queries and DML statements with full ACID transaction support.
+  version: v1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/spanner/docs/reference/rest
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+  - url: https://spanner.googleapis.com/v1
+    description: Cloud Spanner API v1
+tags:
+  - name: Instances
+    description: Operations on Spanner instances
+  - name: Databases
+    description: Operations on Spanner databases
+  - name: Sessions
+    description: Operations on database sessions
+paths:
+  /projects/{project}/instances:
+    get:
+      tags:
+        - Instances
+      summary: List instances
+      description: Lists all instances in the given project.
+      operationId: listInstances
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+        - name: filter
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListInstancesResponse'
+      security:
+        - oauth2:
+            - https://www.googleapis.com/auth/cloud-platform
+            - https://www.googleapis.com/auth/spanner.admin
+    post:
+      tags:
+        - Instances
+      summary: Create an instance
+      description: Creates an instance and begins preparing it to be used.
+      operationId: createInstance
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateInstanceRequest'
+      responses:
+        '200':
+          description: Instance creation initiated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+      security:
+        - oauth2:
+            - https://www.googleapis.com/auth/cloud-platform
+            - https://www.googleapis.com/auth/spanner.admin
+  /projects/{project}/instances/{instance}:
+    get:
+      tags:
+        - Instances
+      summary: Get an instance
+      description: Gets information about a particular instance.
+      operationId: getInstance
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: instance
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Instance'
+      security:
+        - oauth2:
+            - https://www.googleapis.com/auth/cloud-platform
+            - https://www.googleapis.com/auth/spanner.admin
+    patch:
+      tags:
+        - Instances
+      summary: Update an instance
+      description: Updates an instance, and begins allocating or releasing resources as requested.
+      operationId: updateInstance
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: instance
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateInstanceRequest'
+      responses:
+        '200':
+          description: Instance update initiated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+      security:
+        - oauth2:
+            - https://www.googleapis.com/auth/cloud-platform
+            - https://www.googleapis.com/auth/spanner.admin
+    delete:
+      tags:
+        - Instances
+      summary: Delete an instance
+      description: Deletes an instance. Immediately upon completion of the request, the instance and all its databases are deleted.
+      operationId: deleteInstance
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: instance
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Instance deleted successfully
+      security:
+        - oauth2:
+            - https://www.googleapis.com/auth/cloud-platform
+            - https://www.googleapis.com/auth/spanner.admin
+  /projects/{project}/instances/{instance}/databases:
+    get:
+      tags:
+        - Databases
+      summary: List databases
+      description: Lists Cloud Spanner databases.
+      operationId: listDatabases
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: instance
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListDatabasesResponse'
+      security:
+        - oauth2:
+            - https://www.googleapis.com/auth/cloud-platform
+            - https://www.googleapis.com/auth/spanner.admin
+    post:
+      tags:
+        - Databases
+      summary: Create a database
+      description: Creates a new Cloud Spanner database and starts preparing it to begin serving.
+      operationId: createDatabase
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: instance
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDatabaseRequest'
+      responses:
+        '200':
+          description: Database creation initiated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+      security:
+        - oauth2:
+            - https://www.googleapis.com/auth/cloud-platform
+            - https://www.googleapis.com/auth/spanner.admin
+  /projects/{project}/instances/{instance}/databases/{database}:
+    get:
+      tags:
+        - Databases
+      summary: Get a database
+      description: Gets the state of a Cloud Spanner database.
+      operationId: getDatabase
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: instance
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: database
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Database'
+      security:
+        - oauth2:
+            - https://www.googleapis.com/auth/cloud-platform
+            - https://www.googleapis.com/auth/spanner.admin
+    delete:
+      tags:
+        - Databases
+      summary: Drop a database
+      description: Drops (deletes) a Cloud Spanner database.
+      operationId: dropDatabase
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: instance
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: database
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Database dropped successfully
+      security:
+        - oauth2:
+            - https://www.googleapis.com/auth/cloud-platform
+            - https://www.googleapis.com/auth/spanner.admin
+  /projects/{project}/instances/{instance}/databases/{database}/sessions:
+    post:
+      tags:
+        - Sessions
+      summary: Create a session
+      description: Creates a new session to be used for requests made with the Spanner API.
+      operationId: createSession
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: instance
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: database
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Session created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+      security:
+        - oauth2:
+            - https://www.googleapis.com/auth/cloud-platform
+            - https://www.googleapis.com/auth/spanner.data
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloud-platform: Full access to Cloud Platform
+            https://www.googleapis.com/auth/spanner.admin: Administer Spanner databases
+            https://www.googleapis.com/auth/spanner.data: View and manage Spanner data
+  schemas:
+    Instance:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The unique name of the instance.
+        config:
+          type: string
+          description: The instance configuration to use.
+        displayName:
+          type: string
+          description: The descriptive name for the instance.
+        nodeCount:
+          type: integer
+          description: The number of nodes allocated to this instance.
+        processingUnits:
+          type: integer
+          description: The number of processing units allocated to this instance.
+        state:
+          type: string
+          enum:
+            - STATE_UNSPECIFIED
+            - CREATING
+            - READY
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+    Database:
+      type: object
+      properties:
+        name:
+          type: string
+        state:
+          type: string
+          enum:
+            - STATE_UNSPECIFIED
+            - CREATING
+            - READY
+            - READY_OPTIMIZING
+        createTime:
+          type: string
+          format: date-time
+        versionRetentionPeriod:
+          type: string
+        earliestVersionTime:
+          type: string
+          format: date-time
+        defaultLeader:
+          type: string
+        databaseDialect:
+          type: string
+          enum:
+            - DATABASE_DIALECT_UNSPECIFIED
+            - GOOGLE_STANDARD_SQL
+            - POSTGRESQL
+    Session:
+      type: object
+      properties:
+        name:
+          type: string
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+        createTime:
+          type: string
+          format: date-time
+        approximateLastUseTime:
+          type: string
+          format: date-time
+    CreateInstanceRequest:
+      type: object
+      properties:
+        instanceId:
+          type: string
+        instance:
+          $ref: '#/components/schemas/Instance'
+      required:
+        - instanceId
+        - instance
+    UpdateInstanceRequest:
+      type: object
+      properties:
+        instance:
+          $ref: '#/components/schemas/Instance'
+        fieldMask:
+          type: string
+      required:
+        - instance
+        - fieldMask
+    CreateDatabaseRequest:
+      type: object
+      properties:
+        createStatement:
+          type: string
+        extraStatements:
+          type: array
+          items:
+            type: string
+        databaseDialect:
+          type: string
+      required:
+        - createStatement
+    ListInstancesResponse:
+      type: object
+      properties:
+        instances:
+          type: array
+          items:
+            $ref: '#/components/schemas/Instance'
+        nextPageToken:
+          type: string
+    ListDatabasesResponse:
+      type: object
+      properties:
+        databases:
+          type: array
+          items:
+            $ref: '#/components/schemas/Database'
+        nextPageToken:
+          type: string
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+        metadata:
+          type: object
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
