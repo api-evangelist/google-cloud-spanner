@@ -17,10 +17,10 @@ servers:
   - url: https://spanner.googleapis.com/v1
     description: Cloud Spanner API v1
 tags:
-  - name: Instances
-    description: Operations on Spanner instances
   - name: Databases
     description: Operations on Spanner databases
+  - name: Instances
+    description: Operations on Spanner instances
   - name: Sessions
     description: Operations on database sessions
 paths:

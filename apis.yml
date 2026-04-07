@@ -14,10 +14,10 @@ specificationVersion: '0.19'
 type: Index
 tags:
   - Database
-  - Relational
-  - SQL
   - Distributed
   - Google Cloud
+  - Relational
+  - SQL
 apis:
   - name: Cloud Spanner API
     description: >-
