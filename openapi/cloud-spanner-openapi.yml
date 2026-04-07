@@ -28,7 +28,7 @@ paths:
     get:
       tags:
         - Instances
-      summary: List instances
+      summary: Google Cloud Spanner List instances
       description: Lists all instances in the given project.
       operationId: listInstances
       parameters:
@@ -63,7 +63,7 @@ paths:
     post:
       tags:
         - Instances
-      summary: Create an instance
+      summary: Google Cloud Spanner Create an instance
       description: Creates an instance and begins preparing it to be used.
       operationId: createInstance
       parameters:
@@ -93,7 +93,7 @@ paths:
     get:
       tags:
         - Instances
-      summary: Get an instance
+      summary: Google Cloud Spanner Get an instance
       description: Gets information about a particular instance.
       operationId: getInstance
       parameters:
@@ -121,7 +121,7 @@ paths:
     patch:
       tags:
         - Instances
-      summary: Update an instance
+      summary: Google Cloud Spanner Update an instance
       description: Updates an instance, and begins allocating or releasing resources as requested.
       operationId: updateInstance
       parameters:
@@ -155,7 +155,7 @@ paths:
     delete:
       tags:
         - Instances
-      summary: Delete an instance
+      summary: Google Cloud Spanner Delete an instance
       description: Deletes an instance. Immediately upon completion of the request, the instance and all its databases are deleted.
       operationId: deleteInstance
       parameters:
@@ -180,7 +180,7 @@ paths:
     get:
       tags:
         - Databases
-      summary: List databases
+      summary: Google Cloud Spanner List databases
       description: Lists Cloud Spanner databases.
       operationId: listDatabases
       parameters:
@@ -216,7 +216,7 @@ paths:
     post:
       tags:
         - Databases
-      summary: Create a database
+      summary: Google Cloud Spanner Create a database
       description: Creates a new Cloud Spanner database and starts preparing it to begin serving.
       operationId: createDatabase
       parameters:
@@ -251,7 +251,7 @@ paths:
     get:
       tags:
         - Databases
-      summary: Get a database
+      summary: Google Cloud Spanner Get a database
       description: Gets the state of a Cloud Spanner database.
       operationId: getDatabase
       parameters:
@@ -284,7 +284,7 @@ paths:
     delete:
       tags:
         - Databases
-      summary: Drop a database
+      summary: Google Cloud Spanner Drop a database
       description: Drops (deletes) a Cloud Spanner database.
       operationId: dropDatabase
       parameters:
@@ -314,7 +314,7 @@ paths:
     post:
       tags:
         - Sessions
-      summary: Create a session
+      summary: Google Cloud Spanner Create a session
       description: Creates a new session to be used for requests made with the Spanner API.
       operationId: createSession
       parameters:
