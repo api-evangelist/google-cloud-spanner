@@ -4,7 +4,7 @@ description: >-
   Google Cloud Spanner is a fully managed, mission-critical relational database service that offers transactional
   consistency at global scale, automatic synchronous replication, and schemas with SQL support. It combines the benefits
   of relational database structure with non-relational horizontal scale, providing up to 99.999% availability.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-spanner/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -23,7 +23,7 @@ apis:
       supports creating and configuring globally distributed database infrastructure, executing SQL queries and DML
       statements, managing transactions with strong consistency guarantees, and handling database backups and restore
       operations.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://cloud.google.com/spanner/docs
     baseURL: https://spanner.googleapis.com/v1
     tags:
