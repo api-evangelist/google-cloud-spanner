@@ -43,6 +43,12 @@ apis:
       - type: JSONSchema
         url: json-schema/instance-schema.json
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-cloud-spanner-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-cloud-spanner-domain-security.yml
+  - type: Authentication
+    url: authentication/google-cloud-spanner-authentication.yml
   - type: OAuthScopes
     url: scopes/google-cloud-spanner-scopes.yml
   - type: GitHubOrganization
