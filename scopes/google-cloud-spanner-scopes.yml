@@ -1,0 +1,29 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/cloud-spanner-openapi.yml
+schemes:
+- name: oauth2
+  source: openapi/cloud-spanner-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.google.com/o/oauth2/auth
+    tokenUrl: https://oauth2.googleapis.com/token
+scopes:
+- scope: https://www.googleapis.com/auth/cloud-platform
+  description: Full access to Cloud Platform
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/cloud-spanner-openapi.yml
+- scope: https://www.googleapis.com/auth/spanner.admin
+  description: Administer Spanner databases
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/cloud-spanner-openapi.yml
+- scope: https://www.googleapis.com/auth/spanner.data
+  description: View and manage Spanner data
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/cloud-spanner-openapi.yml
