@@ -43,6 +43,8 @@ apis:
       - type: JSONSchema
         url: json-schema/instance-schema.json
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-cloud-spanner-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-cloud-spanner-vulnerability-disclosure.yml
   - type: DomainSecurity

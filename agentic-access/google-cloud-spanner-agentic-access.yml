@@ -1,0 +1,182 @@
+generated: '2026-07-15'
+method: generated
+source: openapi/cloud-spanner-openapi.yml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 10
+  by_action_class:
+    connected: 4
+    acting: 6
+  by_consequence:
+    read: 4
+    write: 6
+  human_in_the_loop_required: 0
+operations:
+- path: /projects/{project}/instances
+  method: get
+  operationId: listInstances
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-platform
+    - https://www.googleapis.com/auth/spanner.admin
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /projects/{project}/instances
+  method: post
+  operationId: createInstance
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-platform
+    - https://www.googleapis.com/auth/spanner.admin
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /projects/{project}/instances/{instance}
+  method: get
+  operationId: getInstance
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-platform
+    - https://www.googleapis.com/auth/spanner.admin
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /projects/{project}/instances/{instance}
+  method: patch
+  operationId: updateInstance
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-platform
+    - https://www.googleapis.com/auth/spanner.admin
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /projects/{project}/instances/{instance}
+  method: delete
+  operationId: deleteInstance
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-platform
+    - https://www.googleapis.com/auth/spanner.admin
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /projects/{project}/instances/{instance}/databases
+  method: get
+  operationId: listDatabases
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-platform
+    - https://www.googleapis.com/auth/spanner.admin
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /projects/{project}/instances/{instance}/databases
+  method: post
+  operationId: createDatabase
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-platform
+    - https://www.googleapis.com/auth/spanner.admin
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /projects/{project}/instances/{instance}/databases/{database}
+  method: get
+  operationId: getDatabase
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-platform
+    - https://www.googleapis.com/auth/spanner.admin
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /projects/{project}/instances/{instance}/databases/{database}
+  method: delete
+  operationId: dropDatabase
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-platform
+    - https://www.googleapis.com/auth/spanner.admin
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /projects/{project}/instances/{instance}/databases/{database}/sessions
+  method: post
+  operationId: createSession
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-platform
+    - https://www.googleapis.com/auth/spanner.data
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
