@@ -1,0 +1,80 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Spanner Databases Sessions API
+  description: The Cloud Spanner API provides programmatic access to Google Cloud Spanner, a globally distributed, strongly consistent relational database service. It enables management of instances, databases, sessions, and execution of SQL queries and DML statements with full ACID transaction support.
+  version: v1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/spanner/docs/reference/rest
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://spanner.googleapis.com/v1
+  description: Cloud Spanner API v1
+tags:
+- name: Sessions
+  description: Operations on database sessions
+paths:
+  /projects/{project}/instances/{instance}/databases/{database}/sessions:
+    post:
+      tags:
+      - Sessions
+      summary: Google Cloud Spanner Create a session
+      description: Creates a new session to be used for requests made with the Spanner API.
+      operationId: createSession
+      parameters:
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: instance
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: database
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Session created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+      security:
+      - oauth2:
+        - https://www.googleapis.com/auth/cloud-platform
+        - https://www.googleapis.com/auth/spanner.data
+components:
+  schemas:
+    Session:
+      type: object
+      properties:
+        name:
+          type: string
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+        createTime:
+          type: string
+          format: date-time
+        approximateLastUseTime:
+          type: string
+          format: date-time
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloud-platform: Full access to Cloud Platform
+            https://www.googleapis.com/auth/spanner.admin: Administer Spanner databases
+            https://www.googleapis.com/auth/spanner.data: View and manage Spanner data
