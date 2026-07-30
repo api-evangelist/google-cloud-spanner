@@ -4,7 +4,20 @@ description: >-
   Google Cloud Spanner is a fully managed, mission-critical relational database service that offers transactional
   consistency at global scale, automatic synchronous replication, and schemas with SQL support. It combines the benefits
   of relational database structure with non-relational horizontal scale, providing up to 99.999% availability.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-cloud-spanner.png
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-spanner/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -17,32 +30,63 @@ tags:
   - Relational
   - SQL
 apis:
-  - name: Cloud Spanner API
-    description: >-
-      The Cloud Spanner API provides programmatic access to manage Cloud Spanner instances, databases, and sessions. It
-      supports creating and configuring globally distributed database infrastructure, executing SQL queries and DML
-      statements, managing transactions with strong consistency guarantees, and handling database backups and restore
-      operations.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://cloud.google.com/spanner/docs
-    baseURL: https://spanner.googleapis.com/v1
-    tags:
-      - Database
-      - Instances
-      - SQL
-      - Transactions
-    properties:
-      - type: Documentation
-        url: https://cloud.google.com/spanner/docs/reference/rest
-      - type: OpenAPI
-        url: openapi/cloud-spanner-openapi.yml
-      - type: Authentication
-        url: https://cloud.google.com/spanner/docs/authentication
-      - type: GettingStarted
-        url: https://cloud.google.com/spanner/docs/getting-started/rest
-      - type: JSONSchema
-        url: json-schema/instance-schema.json
+- aid: google-cloud-spanner:google-cloud-spanner-databases-api
+  name: Google Cloud Spanner Databases API
+  description: Operations on Spanner databases
+  humanURL: https://cloud.google.com/spanner/docs
+  baseURL: https://spanner.googleapis.com/v1
+  tags:
+  - Databases
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-spanner-databases-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/spanner/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/spanner/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/spanner/docs/getting-started/rest
+  - type: JSONSchema
+    url: json-schema/instance-schema.json
+- aid: google-cloud-spanner:google-cloud-spanner-instances-api
+  name: Google Cloud Spanner Instances API
+  description: Operations on Spanner instances
+  humanURL: https://cloud.google.com/spanner/docs
+  baseURL: https://spanner.googleapis.com/v1
+  tags:
+  - Instances
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-spanner-instances-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/spanner/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/spanner/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/spanner/docs/getting-started/rest
+  - type: JSONSchema
+    url: json-schema/instance-schema.json
+- aid: google-cloud-spanner:google-cloud-spanner-sessions-api
+  name: Google Cloud Spanner Sessions API
+  description: Operations on database sessions
+  humanURL: https://cloud.google.com/spanner/docs
+  baseURL: https://spanner.googleapis.com/v1
+  tags:
+  - Sessions
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-spanner-sessions-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/spanner/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/spanner/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/spanner/docs/getting-started/rest
+  - type: JSONSchema
+    url: json-schema/instance-schema.json
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-cloud-spanner/overview
   - type: AgenticAccess
     url: agentic-access/google-cloud-spanner-agentic-access.yml
   - type: VulnerabilityDisclosure
