@@ -1,0 +1,734 @@
+{
+  "info": {
+    "_postman_id": "df7c7d4a-1e85-4bde-9460-7b3c2818ae95",
+    "name": "Google Cloud Spanner Databases Instances API",
+    "description": "The Cloud Spanner API provides programmatic access to Google Cloud Spanner, a globally distributed, strongly consistent relational database service. It enables management of instances, databases, sessions, and execution of SQL queries and DML statements with full ACID transaction support.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:31.000Z",
+    "updatedAt": "2026-07-28T01:48:31.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-df7c7d4a-1e85-4bde-9460-7b3c2818ae95"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{project}",
+          "item": [
+            {
+              "name": "instances",
+              "item": [
+                {
+                  "name": "{instance}",
+                  "item": [
+                    {
+                      "name": "Google Cloud Spanner Get an instance",
+                      "id": "a2ea9123-c8d0-43de-8adb-86f9f7d74ebb",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/spanner.admin https://www.googleapis.com/auth/spanner.data",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://oauth2.googleapis.com/token",
+                              "type": "string"
+                            },
+                            {
+                              "key": "authUrl",
+                              "value": "https://accounts.google.com/o/oauth2/auth",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "authorization_code",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:project/instances/:instance",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":project",
+                            "instances",
+                            ":instance"
+                          ],
+                          "variable": [
+                            {
+                              "id": "93629f07-d91e-4e39-a2f9-ef856227064f",
+                              "key": "project",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "c7cbd6c4-bd1f-4d60-816c-5f1f99865446",
+                              "key": "instance",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Gets information about a particular instance."
+                      },
+                      "response": [
+                        {
+                          "id": "ed9fd81c-8d92-4979-86b3-28fdaf5ac866",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/instances/:instance",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "instances",
+                                ":instance"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project"
+                                },
+                                {
+                                  "key": "instance"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"name\": \"<string>\",\n  \"config\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"nodeCount\": \"<integer>\",\n  \"processingUnits\": \"<integer>\",\n  \"state\": \"READY\",\n  \"labels\": {\n    \"reprehenderit_8\": \"<string>\",\n    \"Ut_2\": \"<string>\"\n  },\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T01:48:31.000Z",
+                          "updatedAt": "2026-07-28T01:48:31.000Z",
+                          "uid": "35240-ed9fd81c-8d92-4979-86b3-28fdaf5ac866"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:48:31.000Z",
+                      "updatedAt": "2026-07-28T01:48:31.000Z",
+                      "uid": "35240-a2ea9123-c8d0-43de-8adb-86f9f7d74ebb"
+                    },
+                    {
+                      "name": "Google Cloud Spanner Update an instance",
+                      "id": "3d89524f-61fb-4ad8-b4d5-a6716632a943",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/spanner.admin https://www.googleapis.com/auth/spanner.data",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://oauth2.googleapis.com/token",
+                              "type": "string"
+                            },
+                            {
+                              "key": "authUrl",
+                              "value": "https://accounts.google.com/o/oauth2/auth",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "authorization_code",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"instance\": {\n    \"name\": \"<string>\",\n    \"config\": \"<string>\",\n    \"displayName\": \"<string>\",\n    \"nodeCount\": \"<integer>\",\n    \"processingUnits\": \"<integer>\",\n    \"state\": \"STATE_UNSPECIFIED\",\n    \"labels\": {\n      \"nisi4\": \"<string>\"\n    },\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\"\n  },\n  \"fieldMask\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:project/instances/:instance",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":project",
+                            "instances",
+                            ":instance"
+                          ],
+                          "variable": [
+                            {
+                              "id": "dfcdafab-fbb9-44f5-ba9f-8f43149db59f",
+                              "key": "project",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "e3bd9274-17a2-44dc-a538-43cc66a2fab0",
+                              "key": "instance",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Updates an instance, and begins allocating or releasing resources as requested."
+                      },
+                      "response": [
+                        {
+                          "id": "2fefbb56-9b72-4ba4-935e-b52c843e6447",
+                          "name": "Instance update initiated",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"instance\": {\n    \"name\": \"<string>\",\n    \"config\": \"<string>\",\n    \"displayName\": \"<string>\",\n    \"nodeCount\": \"<integer>\",\n    \"processingUnits\": \"<integer>\",\n    \"state\": \"STATE_UNSPECIFIED\",\n    \"labels\": {\n      \"nisi4\": \"<string>\"\n    },\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\"\n  },\n  \"fieldMask\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/instances/:instance",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "instances",
+                                ":instance"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project"
+                                },
+                                {
+                                  "key": "instance"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\",\n  \"metadata\": {},\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  }\n}",
+                          "createdAt": "2026-07-28T01:48:31.000Z",
+                          "updatedAt": "2026-07-28T01:48:31.000Z",
+                          "uid": "35240-2fefbb56-9b72-4ba4-935e-b52c843e6447"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:48:31.000Z",
+                      "updatedAt": "2026-07-28T01:48:31.000Z",
+                      "uid": "35240-3d89524f-61fb-4ad8-b4d5-a6716632a943"
+                    },
+                    {
+                      "name": "Google Cloud Spanner Delete an instance",
+                      "id": "150226f8-ccc7-4bd4-99fd-1bd3b0998e4d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/spanner.admin https://www.googleapis.com/auth/spanner.data",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://oauth2.googleapis.com/token",
+                              "type": "string"
+                            },
+                            {
+                              "key": "authUrl",
+                              "value": "https://accounts.google.com/o/oauth2/auth",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "authorization_code",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:project/instances/:instance",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":project",
+                            "instances",
+                            ":instance"
+                          ],
+                          "variable": [
+                            {
+                              "id": "1b75b243-a733-4e37-9439-9edf658e405e",
+                              "key": "project",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "648f1e58-cecc-4074-ba26-c4316c5c4005",
+                              "key": "instance",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Deletes an instance. Immediately upon completion of the request, the instance and all its databases are deleted."
+                      },
+                      "response": [
+                        {
+                          "id": "a384b87a-a0ff-45d5-9749-694f8aa2db31",
+                          "name": "Instance deleted successfully",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/instances/:instance",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "instances",
+                                ":instance"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project"
+                                },
+                                {
+                                  "key": "instance"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:48:31.000Z",
+                          "updatedAt": "2026-07-28T01:48:31.000Z",
+                          "uid": "35240-a384b87a-a0ff-45d5-9749-694f8aa2db31"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:48:31.000Z",
+                      "updatedAt": "2026-07-28T01:48:31.000Z",
+                      "uid": "35240-150226f8-ccc7-4bd4-99fd-1bd3b0998e4d"
+                    }
+                  ],
+                  "id": "602533fe-09fa-41e0-85f1-bbe7aaff7b3d",
+                  "createdAt": "2026-07-28T01:48:31.000Z",
+                  "updatedAt": "2026-07-28T01:48:31.000Z",
+                  "uid": "35240-602533fe-09fa-41e0-85f1-bbe7aaff7b3d"
+                },
+                {
+                  "name": "Google Cloud Spanner List instances",
+                  "id": "7bb25e54-1d39-4077-9481-016848429de5",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/spanner.admin https://www.googleapis.com/auth/spanner.data",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://oauth2.googleapis.com/token",
+                          "type": "string"
+                        },
+                        {
+                          "key": "authUrl",
+                          "value": "https://accounts.google.com/o/oauth2/auth",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "authorization_code",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/projects/:project/instances?pageSize=<integer>&pageToken=<string>&filter=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projects",
+                        ":project",
+                        "instances"
+                      ],
+                      "query": [
+                        {
+                          "key": "pageSize",
+                          "value": "<integer>"
+                        },
+                        {
+                          "key": "pageToken",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "filter",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "274ff4ce-c394-432e-9c46-e9659c19773e",
+                          "key": "project",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Lists all instances in the given project."
+                  },
+                  "response": [
+                    {
+                      "id": "2f9cc74d-7eac-44f1-9b44-bafb27663776",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:project/instances?pageSize=<integer>&pageToken=<string>&filter=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":project",
+                            "instances"
+                          ],
+                          "query": [
+                            {
+                              "key": "pageSize",
+                              "value": "<integer>"
+                            },
+                            {
+                              "key": "pageToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "filter",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "project"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"instances\": [\n    {\n      \"name\": \"<string>\",\n      \"config\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"nodeCount\": \"<integer>\",\n      \"processingUnits\": \"<integer>\",\n      \"state\": \"READY\",\n      \"labels\": {\n        \"ut_5\": \"<string>\",\n        \"anime01\": \"<string>\"\n      },\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"config\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"nodeCount\": \"<integer>\",\n      \"processingUnits\": \"<integer>\",\n      \"state\": \"CREATING\",\n      \"labels\": {\n        \"sed8\": \"<string>\",\n        \"tempor_5e2\": \"<string>\"\n      },\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:48:31.000Z",
+                      "updatedAt": "2026-07-28T01:48:31.000Z",
+                      "uid": "35240-2f9cc74d-7eac-44f1-9b44-bafb27663776"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:48:31.000Z",
+                  "updatedAt": "2026-07-28T01:48:31.000Z",
+                  "uid": "35240-7bb25e54-1d39-4077-9481-016848429de5"
+                },
+                {
+                  "name": "Google Cloud Spanner Create an instance",
+                  "id": "dd5980e3-9ab3-435b-bf5f-631939430526",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/spanner.admin https://www.googleapis.com/auth/spanner.data",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://oauth2.googleapis.com/token",
+                          "type": "string"
+                        },
+                        {
+                          "key": "authUrl",
+                          "value": "https://accounts.google.com/o/oauth2/auth",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "authorization_code",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"instanceId\": \"<string>\",\n  \"instance\": {\n    \"name\": \"<string>\",\n    \"config\": \"<string>\",\n    \"displayName\": \"<string>\",\n    \"nodeCount\": \"<integer>\",\n    \"processingUnits\": \"<integer>\",\n    \"state\": \"CREATING\",\n    \"labels\": {\n      \"velit_e9\": \"<string>\",\n      \"ut_503\": \"<string>\",\n      \"velite\": \"<string>\"\n    },\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/projects/:project/instances",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projects",
+                        ":project",
+                        "instances"
+                      ],
+                      "variable": [
+                        {
+                          "id": "396a891d-991e-49db-95e7-33d3aec3fde4",
+                          "key": "project",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Creates an instance and begins preparing it to be used."
+                  },
+                  "response": [
+                    {
+                      "id": "213ca5ba-b14a-4738-9656-f9cac44a9b54",
+                      "name": "Instance creation initiated",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"instanceId\": \"<string>\",\n  \"instance\": {\n    \"name\": \"<string>\",\n    \"config\": \"<string>\",\n    \"displayName\": \"<string>\",\n    \"nodeCount\": \"<integer>\",\n    \"processingUnits\": \"<integer>\",\n    \"state\": \"CREATING\",\n    \"labels\": {\n      \"velit_e9\": \"<string>\",\n      \"ut_503\": \"<string>\",\n      \"velite\": \"<string>\"\n    },\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:project/instances",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":project",
+                            "instances"
+                          ],
+                          "variable": [
+                            {
+                              "key": "project"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\",\n  \"metadata\": {},\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:48:31.000Z",
+                      "updatedAt": "2026-07-28T01:48:31.000Z",
+                      "uid": "35240-213ca5ba-b14a-4738-9656-f9cac44a9b54"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:48:31.000Z",
+                  "updatedAt": "2026-07-28T01:48:31.000Z",
+                  "uid": "35240-dd5980e3-9ab3-435b-bf5f-631939430526"
+                }
+              ],
+              "id": "731e7f5a-f906-4dfb-9584-d33c6b932ee5",
+              "createdAt": "2026-07-28T01:48:31.000Z",
+              "updatedAt": "2026-07-28T01:48:31.000Z",
+              "uid": "35240-731e7f5a-f906-4dfb-9584-d33c6b932ee5"
+            }
+          ],
+          "id": "1b564614-e5f3-4cf5-9daa-55bf8223e036",
+          "createdAt": "2026-07-28T01:48:31.000Z",
+          "updatedAt": "2026-07-28T01:48:31.000Z",
+          "uid": "35240-1b564614-e5f3-4cf5-9daa-55bf8223e036"
+        }
+      ],
+      "id": "ee5228c0-5d44-47ad-a70a-900278f4e6a0",
+      "createdAt": "2026-07-28T01:48:31.000Z",
+      "updatedAt": "2026-07-28T01:48:31.000Z",
+      "uid": "35240-ee5228c0-5d44-47ad-a70a-900278f4e6a0"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://spanner.googleapis.com/v1"
+    }
+  ]
+}

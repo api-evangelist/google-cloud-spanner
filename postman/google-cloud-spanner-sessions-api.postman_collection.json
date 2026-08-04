@@ -1,0 +1,224 @@
+{
+  "info": {
+    "_postman_id": "4667f45d-fdbf-421d-aa30-c12cc4ca17b9",
+    "name": "Google Cloud Spanner Databases Sessions API",
+    "description": "The Cloud Spanner API provides programmatic access to Google Cloud Spanner, a globally distributed, strongly consistent relational database service. It enables management of instances, databases, sessions, and execution of SQL queries and DML statements with full ACID transaction support.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:32.000Z",
+    "updatedAt": "2026-07-28T01:48:32.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-4667f45d-fdbf-421d-aa30-c12cc4ca17b9"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{project}",
+          "item": [
+            {
+              "name": "instances",
+              "item": [
+                {
+                  "name": "{instance}",
+                  "item": [
+                    {
+                      "name": "databases",
+                      "item": [
+                        {
+                          "name": "{database}",
+                          "item": [
+                            {
+                              "name": "sessions",
+                              "item": [
+                                {
+                                  "name": "Google Cloud Spanner Create a session",
+                                  "id": "5c493ad9-3c98-48d9-a452-c111ef060def",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "auth": {
+                                      "type": "oauth2",
+                                      "oauth2": [
+                                        {
+                                          "key": "scope",
+                                          "value": "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/spanner.admin https://www.googleapis.com/auth/spanner.data",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "key": "accessTokenUrl",
+                                          "value": "https://oauth2.googleapis.com/token",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "key": "authUrl",
+                                          "value": "https://accounts.google.com/o/oauth2/auth",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "key": "grant_type",
+                                          "value": "authorization_code",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:project/instances/:instance/databases/:database/sessions",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":project",
+                                        "instances",
+                                        ":instance",
+                                        "databases",
+                                        ":database",
+                                        "sessions"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "6e819a53-9d55-4810-8ed0-e9991767c66c",
+                                          "key": "project",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "213acf6c-de10-4db5-bc4d-ed215471d368",
+                                          "key": "instance",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "d992b9ef-0c01-4427-aeae-3e32f86f0f92",
+                                          "key": "database",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Creates a new session to be used for requests made with the Spanner API."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "68025129-098a-438e-9f85-a912188fc085",
+                                      "name": "Session created successfully",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/projects/:project/instances/:instance/databases/:database/sessions",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "projects",
+                                            ":project",
+                                            "instances",
+                                            ":instance",
+                                            "databases",
+                                            ":database",
+                                            "sessions"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "project"
+                                            },
+                                            {
+                                              "key": "instance"
+                                            },
+                                            {
+                                              "key": "database"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"name\": \"<string>\",\n  \"labels\": {\n    \"exercitation__\": \"<string>\",\n    \"nisi_9e\": \"<string>\",\n    \"dolor_0_5\": \"<string>\"\n  },\n  \"createTime\": \"<dateTime>\",\n  \"approximateLastUseTime\": \"<dateTime>\"\n}",
+                                      "createdAt": "2026-07-28T01:48:32.000Z",
+                                      "updatedAt": "2026-07-28T01:48:32.000Z",
+                                      "uid": "35240-68025129-098a-438e-9f85-a912188fc085"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:48:32.000Z",
+                                  "updatedAt": "2026-07-28T01:48:32.000Z",
+                                  "uid": "35240-5c493ad9-3c98-48d9-a452-c111ef060def"
+                                }
+                              ],
+                              "id": "15cb1046-0e6e-4f3d-8cfa-1a3bf2d75809",
+                              "createdAt": "2026-07-28T01:48:32.000Z",
+                              "updatedAt": "2026-07-28T01:48:32.000Z",
+                              "uid": "35240-15cb1046-0e6e-4f3d-8cfa-1a3bf2d75809"
+                            }
+                          ],
+                          "id": "c239e7ff-e090-4398-b4f2-87103b24c2ae",
+                          "createdAt": "2026-07-28T01:48:32.000Z",
+                          "updatedAt": "2026-07-28T01:48:32.000Z",
+                          "uid": "35240-c239e7ff-e090-4398-b4f2-87103b24c2ae"
+                        }
+                      ],
+                      "id": "dd9bf196-d7dc-46a9-934f-4b83ef938c4f",
+                      "createdAt": "2026-07-28T01:48:32.000Z",
+                      "updatedAt": "2026-07-28T01:48:32.000Z",
+                      "uid": "35240-dd9bf196-d7dc-46a9-934f-4b83ef938c4f"
+                    }
+                  ],
+                  "id": "1f106a31-c2fe-4361-9dd6-6b2218955668",
+                  "createdAt": "2026-07-28T01:48:32.000Z",
+                  "updatedAt": "2026-07-28T01:48:32.000Z",
+                  "uid": "35240-1f106a31-c2fe-4361-9dd6-6b2218955668"
+                }
+              ],
+              "id": "8d9e7b1b-013b-4cd4-88bf-9ed1cf8fcdfb",
+              "createdAt": "2026-07-28T01:48:32.000Z",
+              "updatedAt": "2026-07-28T01:48:32.000Z",
+              "uid": "35240-8d9e7b1b-013b-4cd4-88bf-9ed1cf8fcdfb"
+            }
+          ],
+          "id": "d7b1a023-5ed6-44e1-b92f-313b08e9b828",
+          "createdAt": "2026-07-28T01:48:32.000Z",
+          "updatedAt": "2026-07-28T01:48:32.000Z",
+          "uid": "35240-d7b1a023-5ed6-44e1-b92f-313b08e9b828"
+        }
+      ],
+      "id": "37e25824-d4c1-4918-81e9-1e8d136a7556",
+      "createdAt": "2026-07-28T01:48:32.000Z",
+      "updatedAt": "2026-07-28T01:48:32.000Z",
+      "uid": "35240-37e25824-d4c1-4918-81e9-1e8d136a7556"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://spanner.googleapis.com/v1"
+    }
+  ]
+}

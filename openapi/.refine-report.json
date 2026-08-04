@@ -1,0 +1,18 @@
+{
+  "provider": "google-cloud-spanner",
+  "sources": [
+    "google-cloud-spanner-databases-api-openapi.yml",
+    "google-cloud-spanner-instances-api-openapi.yml",
+    "google-cloud-spanner-sessions-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-spanner-databases-api-openapi.yml",
+    "google-cloud-spanner-instances-api-openapi.yml",
+    "google-cloud-spanner-sessions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
