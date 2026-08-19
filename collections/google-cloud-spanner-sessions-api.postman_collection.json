@@ -1,0 +1,186 @@
+{
+  "item": [
+    {
+      "id": "963bfaf1-5acd-4fc1-a108-1e797aa48fb7",
+      "name": "Sessions",
+      "description": {
+        "content": "Operations on database sessions",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9abf9a6c-a6aa-4193-9d86-f5c19f661946",
+          "name": "Google Cloud Spanner Create a session",
+          "request": {
+            "name": "Google Cloud Spanner Create a session",
+            "description": {
+              "content": "Creates a new session to be used for requests made with the Spanner API.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "instances",
+                ":instance",
+                "databases",
+                ":database",
+                "sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "instance",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "database",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/spanner.admin https://www.googleapis.com/auth/spanner.data"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8f20ed20-8b3b-418a-90a3-438a5ae81e7e",
+              "name": "Session created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "instances",
+                    ":instance",
+                    "databases",
+                    ":database",
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "database",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"labels\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"createTime\": \"2005-01-01T00:02:09.572Z\",\n  \"approximateLastUseTime\": \"2004-12-02T10:52:08.141Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://spanner.googleapis.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8994c669-f4b8-4bef-8458-2563a1744eae",
+    "name": "Google Cloud Spanner Databases Sessions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Cloud Spanner API provides programmatic access to Google Cloud Spanner, a globally distributed, strongly consistent relational database service. It enables management of instances, databases, sessions, and execution of SQL queries and DML statements with full ACID transaction support.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Spanner Databases Sessions API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sessions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Spanner Create a session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://spanner.googleapis.com/v1/projects/:project/instances/:instance/databases/:database/sessions",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "database",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Creates a new session to be used for requests made with the Spanner API."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

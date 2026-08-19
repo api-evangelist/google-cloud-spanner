@@ -1,0 +1,639 @@
+{
+  "item": [
+    {
+      "id": "10c2d960-6fa9-47e9-ac20-07b58392c7ad",
+      "name": "Databases",
+      "description": {
+        "content": "Operations on Spanner databases",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4559be10-e3d5-48f8-bc7b-861e507259c6",
+          "name": "Google Cloud Spanner List databases",
+          "request": {
+            "name": "Google Cloud Spanner List databases",
+            "description": {
+              "content": "Lists Cloud Spanner databases.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "instances",
+                ":instance",
+                "databases"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "instance",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/spanner.admin https://www.googleapis.com/auth/spanner.data"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "dfa5fcbe-1cee-4e70-8d24-9fa6339da8c2",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "instances",
+                    ":instance",
+                    "databases"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instance",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"databases\": [\n    {\n      \"name\": \"string\",\n      \"state\": \"STATE_UNSPECIFIED\",\n      \"createTime\": \"1973-11-24T06:48:31.658Z\",\n      \"versionRetentionPeriod\": \"string\",\n      \"earliestVersionTime\": \"1993-09-22T03:09:28.876Z\",\n      \"defaultLeader\": \"string\",\n      \"databaseDialect\": \"GOOGLE_STANDARD_SQL\"\n    },\n    {\n      \"name\": \"string\",\n      \"state\": \"CREATING\",\n      \"createTime\": \"1985-09-03T19:22:46.296Z\",\n      \"versionRetentionPeriod\": \"string\",\n      \"earliestVersionTime\": \"1983-07-28T15:25:37.186Z\",\n      \"defaultLeader\": \"string\",\n      \"databaseDialect\": \"GOOGLE_STANDARD_SQL\"\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "56d9ed04-6ae4-4d94-ac24-e9fd626a117c",
+          "name": "Google Cloud Spanner Create a database",
+          "request": {
+            "name": "Google Cloud Spanner Create a database",
+            "description": {
+              "content": "Creates a new Cloud Spanner database and starts preparing it to begin serving.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "instances",
+                ":instance",
+                "databases"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "instance",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/spanner.admin https://www.googleapis.com/auth/spanner.data"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"createStatement\": \"<string>\",\n  \"extraStatements\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"databaseDialect\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2ff7cd52-cbbd-4698-9cee-6bb4258c7eca",
+              "name": "Database creation initiated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "instances",
+                    ":instance",
+                    "databases"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instance",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"createStatement\": \"<string>\",\n  \"extraStatements\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"databaseDialect\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"done\": false,\n  \"metadata\": {},\n  \"error\": {\n    \"code\": 5120,\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "454998aa-aaca-4f57-b16d-e876cab97ae6",
+          "name": "Google Cloud Spanner Get a database",
+          "request": {
+            "name": "Google Cloud Spanner Get a database",
+            "description": {
+              "content": "Gets the state of a Cloud Spanner database.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "instances",
+                ":instance",
+                "databases",
+                ":database"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "instance",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "database",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/spanner.admin https://www.googleapis.com/auth/spanner.data"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "215dd6d1-4174-487c-8962-834a6619a85d",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "instances",
+                    ":instance",
+                    "databases",
+                    ":database"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "database",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"state\": \"READY_OPTIMIZING\",\n  \"createTime\": \"2025-02-18T04:47:25.220Z\",\n  \"versionRetentionPeriod\": \"string\",\n  \"earliestVersionTime\": \"1955-12-11T07:18:48.792Z\",\n  \"defaultLeader\": \"string\",\n  \"databaseDialect\": \"DATABASE_DIALECT_UNSPECIFIED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cc997a8c-3189-4105-918f-10a3ea4d92c0",
+          "name": "Google Cloud Spanner Drop a database",
+          "request": {
+            "name": "Google Cloud Spanner Drop a database",
+            "description": {
+              "content": "Drops (deletes) a Cloud Spanner database.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "instances",
+                ":instance",
+                "databases",
+                ":database"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "instance",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "database",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/spanner.admin https://www.googleapis.com/auth/spanner.data"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "50ac9ecc-ba40-4749-8a68-15814ea18fa6",
+              "name": "Database dropped successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "instances",
+                    ":instance",
+                    "databases",
+                    ":database"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instance",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "database",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://spanner.googleapis.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ca6d8f3b-0de2-4932-a4b0-61131c4314ad",
+    "name": "Google Cloud Spanner Databases API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Cloud Spanner API provides programmatic access to Google Cloud Spanner, a globally distributed, strongly consistent relational database service. It enables management of instances, databases, sessions, and execution of SQL queries and DML statements with full ACID transaction support.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Spanner Databases API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Databases",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Spanner List databases",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://spanner.googleapis.com/v1/projects/:project/instances/:instance/databases",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Lists Cloud Spanner databases."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Spanner Create a database",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://spanner.googleapis.com/v1/projects/:project/instances/:instance/databases",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Creates a new Cloud Spanner database and starts preparing it to begin serving."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Spanner Get a database",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://spanner.googleapis.com/v1/projects/:project/instances/:instance/databases/:database",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "database",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Gets the state of a Cloud Spanner database."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Spanner Drop a database",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://spanner.googleapis.com/v1/projects/:project/instances/:instance/databases/:database",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "database",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Drops (deletes) a Cloud Spanner database."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
