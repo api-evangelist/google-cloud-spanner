@@ -4,6 +4,18 @@ description: >-
   Google Cloud Spanner is a fully managed, mission-critical relational database service that offers transactional
   consistency at global scale, automatic synchronous replication, and schemas with SQL support. It combines the benefits
   of relational database structure with non-relational horizontal scale, providing up to 99.999% availability.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
