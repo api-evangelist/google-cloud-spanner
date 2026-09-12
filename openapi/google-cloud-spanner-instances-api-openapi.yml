@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Google Cloud Spanner Databases Instances API
   description: The Cloud Spanner API provides programmatic access to Google Cloud Spanner, a globally distributed, strongly consistent relational database service. It enables management of instances, databases, sessions, and execution of SQL queries and DML statements with full ACID transaction support.
@@ -170,16 +170,6 @@ paths:
         - https://www.googleapis.com/auth/spanner.admin
 components:
   schemas:
-    UpdateInstanceRequest:
-      type: object
-      properties:
-        instance:
-          $ref: '#/components/schemas/Instance'
-        fieldMask:
-          type: string
-      required:
-      - instance
-      - fieldMask
     CreateInstanceRequest:
       type: object
       properties:
@@ -190,6 +180,32 @@ components:
       required:
       - instanceId
       - instance
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+        metadata:
+          type: object
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+    UpdateInstanceRequest:
+      type: object
+      properties:
+        instance:
+          $ref: '#/components/schemas/Instance'
+        fieldMask:
+          type: string
+      required:
+      - instance
+      - fieldMask
     Instance:
       type: object
       properties:
@@ -224,22 +240,6 @@ components:
         updateTime:
           type: string
           format: date-time
-    Operation:
-      type: object
-      properties:
-        name:
-          type: string
-        done:
-          type: boolean
-        metadata:
-          type: object
-        error:
-          type: object
-          properties:
-            code:
-              type: integer
-            message:
-              type: string
     ListInstancesResponse:
       type: object
       properties:

@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Google Cloud Spanner Databases API
   description: The Cloud Spanner API provides programmatic access to Google Cloud Spanner, a globally distributed, strongly consistent relational database service. It enables management of instances, databases, sessions, and execution of SQL queries and DML statements with full ACID transaction support.
@@ -152,15 +152,6 @@ paths:
         - https://www.googleapis.com/auth/spanner.admin
 components:
   schemas:
-    ListDatabasesResponse:
-      type: object
-      properties:
-        databases:
-          type: array
-          items:
-            $ref: '#/components/schemas/Database'
-        nextPageToken:
-          type: string
     Operation:
       type: object
       properties:
@@ -177,19 +168,15 @@ components:
               type: integer
             message:
               type: string
-    CreateDatabaseRequest:
+    ListDatabasesResponse:
       type: object
       properties:
-        createStatement:
-          type: string
-        extraStatements:
+        databases:
           type: array
           items:
-            type: string
-        databaseDialect:
+            $ref: '#/components/schemas/Database'
+        nextPageToken:
           type: string
-      required:
-      - createStatement
     Database:
       type: object
       properties:
@@ -218,6 +205,19 @@ components:
           - DATABASE_DIALECT_UNSPECIFIED
           - GOOGLE_STANDARD_SQL
           - POSTGRESQL
+    CreateDatabaseRequest:
+      type: object
+      properties:
+        createStatement:
+          type: string
+        extraStatements:
+          type: array
+          items:
+            type: string
+        databaseDialect:
+          type: string
+      required:
+      - createStatement
   securitySchemes:
     oauth2:
       type: oauth2
