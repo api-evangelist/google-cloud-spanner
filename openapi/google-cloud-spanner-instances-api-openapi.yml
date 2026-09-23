@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Spanner Databases Instances API
+  title: Google Cloud Spanner Instances API
   description: The Cloud Spanner API provides programmatic access to Google Cloud Spanner, a globally distributed, strongly consistent relational database service. It enables management of instances, databases, sessions, and execution of SQL queries and DML statements with full ACID transaction support.
   version: v1
   contact:
@@ -170,42 +170,6 @@ paths:
         - https://www.googleapis.com/auth/spanner.admin
 components:
   schemas:
-    CreateInstanceRequest:
-      type: object
-      properties:
-        instanceId:
-          type: string
-        instance:
-          $ref: '#/components/schemas/Instance'
-      required:
-      - instanceId
-      - instance
-    Operation:
-      type: object
-      properties:
-        name:
-          type: string
-        done:
-          type: boolean
-        metadata:
-          type: object
-        error:
-          type: object
-          properties:
-            code:
-              type: integer
-            message:
-              type: string
-    UpdateInstanceRequest:
-      type: object
-      properties:
-        instance:
-          $ref: '#/components/schemas/Instance'
-        fieldMask:
-          type: string
-      required:
-      - instance
-      - fieldMask
     Instance:
       type: object
       properties:
@@ -240,6 +204,32 @@ components:
         updateTime:
           type: string
           format: date-time
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+        metadata:
+          type: object
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+    CreateInstanceRequest:
+      type: object
+      properties:
+        instanceId:
+          type: string
+        instance:
+          $ref: '#/components/schemas/Instance'
+      required:
+      - instanceId
+      - instance
     ListInstancesResponse:
       type: object
       properties:
@@ -249,6 +239,16 @@ components:
             $ref: '#/components/schemas/Instance'
         nextPageToken:
           type: string
+    UpdateInstanceRequest:
+      type: object
+      properties:
+        instance:
+          $ref: '#/components/schemas/Instance'
+        fieldMask:
+          type: string
+      required:
+      - instance
+      - fieldMask
   securitySchemes:
     oauth2:
       type: oauth2

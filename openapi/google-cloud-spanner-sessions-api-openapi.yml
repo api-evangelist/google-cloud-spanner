@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Spanner Databases Sessions API
+  title: Google Cloud Spanner Sessions API
   description: The Cloud Spanner API provides programmatic access to Google Cloud Spanner, a globally distributed, strongly consistent relational database service. It enables management of instances, databases, sessions, and execution of SQL queries and DML statements with full ACID transaction support.
   version: v1
   contact:
