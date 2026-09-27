@@ -170,6 +170,16 @@ paths:
         - https://www.googleapis.com/auth/spanner.admin
 components:
   schemas:
+    UpdateInstanceRequest:
+      type: object
+      properties:
+        instance:
+          $ref: '#/components/schemas/Instance'
+        fieldMask:
+          type: string
+      required:
+      - instance
+      - fieldMask
     Instance:
       type: object
       properties:
@@ -204,6 +214,15 @@ components:
         updateTime:
           type: string
           format: date-time
+    ListInstancesResponse:
+      type: object
+      properties:
+        instances:
+          type: array
+          items:
+            $ref: '#/components/schemas/Instance'
+        nextPageToken:
+          type: string
     Operation:
       type: object
       properties:
@@ -230,25 +249,6 @@ components:
       required:
       - instanceId
       - instance
-    ListInstancesResponse:
-      type: object
-      properties:
-        instances:
-          type: array
-          items:
-            $ref: '#/components/schemas/Instance'
-        nextPageToken:
-          type: string
-    UpdateInstanceRequest:
-      type: object
-      properties:
-        instance:
-          $ref: '#/components/schemas/Instance'
-        fieldMask:
-          type: string
-      required:
-      - instance
-      - fieldMask
   securitySchemes:
     oauth2:
       type: oauth2
