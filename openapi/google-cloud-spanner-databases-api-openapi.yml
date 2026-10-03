@@ -168,15 +168,6 @@ components:
               type: integer
             message:
               type: string
-    ListDatabasesResponse:
-      type: object
-      properties:
-        databases:
-          type: array
-          items:
-            $ref: '#/components/schemas/Database'
-        nextPageToken:
-          type: string
     Database:
       type: object
       properties:
@@ -218,6 +209,15 @@ components:
           type: string
       required:
       - createStatement
+    ListDatabasesResponse:
+      type: object
+      properties:
+        databases:
+          type: array
+          items:
+            $ref: '#/components/schemas/Database'
+        nextPageToken:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2
