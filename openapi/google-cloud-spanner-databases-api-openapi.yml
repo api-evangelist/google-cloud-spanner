@@ -152,6 +152,19 @@ paths:
         - https://www.googleapis.com/auth/spanner.admin
 components:
   schemas:
+    CreateDatabaseRequest:
+      type: object
+      properties:
+        createStatement:
+          type: string
+        extraStatements:
+          type: array
+          items:
+            type: string
+        databaseDialect:
+          type: string
+      required:
+      - createStatement
     Operation:
       type: object
       properties:
@@ -196,19 +209,6 @@ components:
           - DATABASE_DIALECT_UNSPECIFIED
           - GOOGLE_STANDARD_SQL
           - POSTGRESQL
-    CreateDatabaseRequest:
-      type: object
-      properties:
-        createStatement:
-          type: string
-        extraStatements:
-          type: array
-          items:
-            type: string
-        databaseDialect:
-          type: string
-      required:
-      - createStatement
     ListDatabasesResponse:
       type: object
       properties:

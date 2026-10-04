@@ -170,6 +170,50 @@ paths:
         - https://www.googleapis.com/auth/spanner.admin
 components:
   schemas:
+    CreateInstanceRequest:
+      type: object
+      properties:
+        instanceId:
+          type: string
+        instance:
+          $ref: '#/components/schemas/Instance'
+      required:
+      - instanceId
+      - instance
+    Instance:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The unique name of the instance.
+        config:
+          type: string
+          description: The instance configuration to use.
+        displayName:
+          type: string
+          description: The descriptive name for the instance.
+        nodeCount:
+          type: integer
+          description: The number of nodes allocated to this instance.
+        processingUnits:
+          type: integer
+          description: The number of processing units allocated to this instance.
+        state:
+          type: string
+          enum:
+          - STATE_UNSPECIFIED
+          - CREATING
+          - READY
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
     ListInstancesResponse:
       type: object
       properties:
@@ -205,50 +249,6 @@ components:
       required:
       - instance
       - fieldMask
-    Instance:
-      type: object
-      properties:
-        name:
-          type: string
-          description: The unique name of the instance.
-        config:
-          type: string
-          description: The instance configuration to use.
-        displayName:
-          type: string
-          description: The descriptive name for the instance.
-        nodeCount:
-          type: integer
-          description: The number of nodes allocated to this instance.
-        processingUnits:
-          type: integer
-          description: The number of processing units allocated to this instance.
-        state:
-          type: string
-          enum:
-          - STATE_UNSPECIFIED
-          - CREATING
-          - READY
-        labels:
-          type: object
-          additionalProperties:
-            type: string
-        createTime:
-          type: string
-          format: date-time
-        updateTime:
-          type: string
-          format: date-time
-    CreateInstanceRequest:
-      type: object
-      properties:
-        instanceId:
-          type: string
-        instance:
-          $ref: '#/components/schemas/Instance'
-      required:
-      - instanceId
-      - instance
   securitySchemes:
     oauth2:
       type: oauth2
