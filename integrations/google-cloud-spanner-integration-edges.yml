@@ -11,7 +11,7 @@ edges:
   evidence: https://cloud.google.com/spanner/docs/postgresql-interface
   evidence_kind: own-docs
   evidence_file: https://github.com/api-evangelist/google-cloud-spanner/blob/main/evidence/compatibility/google-cloud-spanner-postgres-wire-1.md
-  quote: PostgreSQL interface  |  Spanner  |  Google Cloud Documentation
+  quote: The PostgreSQL interface for Spanner lets you take advantage of
   supported_operations:
   - COPY
   - Foreign
