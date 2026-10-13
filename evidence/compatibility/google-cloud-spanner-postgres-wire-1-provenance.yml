@@ -1,0 +1,12 @@
+fetched: '2026-10-13'
+method: fetched
+source: https://cloud.google.com/spanner/docs/postgresql-interface
+page: https://cloud.google.com/spanner/docs/postgresql-interface
+file: google-cloud-spanner-postgres-wire-1.md
+bytes: 25024
+sha256: 6ffc399bb8c3e733ceb4ff306f36b9e609db267ddcdc39035543c7150e870c12
+anchor: postgresql
+shape: postgres-wire
+classification: declares-compatibility
+quote: PostgreSQL interface  |  Spanner  |  Google Cloud Documentation
+note: text extracted from the provider's own page (tags stripped), saved for evidence

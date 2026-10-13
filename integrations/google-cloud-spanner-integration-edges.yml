@@ -1,0 +1,26 @@
+edges:
+- partner_name: PostgreSQL
+  partner: postgresql
+  partner_match: shape-anchor
+  channel: provider-built
+  relationship: compatible
+  direction: provider-built
+  shape: postgres-wire
+  type: docs
+  degree: declared-subset
+  evidence: https://cloud.google.com/spanner/docs/postgresql-interface
+  evidence_kind: own-docs
+  evidence_file: https://github.com/api-evangelist/google-cloud-spanner/blob/main/evidence/compatibility/google-cloud-spanner-postgres-wire-1.md
+  quote: PostgreSQL interface  |  Spanner  |  Google Cloud Documentation
+  supported_operations:
+  - COPY
+  - Foreign
+  - JSONB
+  - Replication
+  - Views
+  unsupported_operations: []
+  supported_share: 0.185
+  detected_by: sweep-shape-compat.py
+  first_seen: '2026-10-13'
+generated: '2026-10-13'
+method: searched
