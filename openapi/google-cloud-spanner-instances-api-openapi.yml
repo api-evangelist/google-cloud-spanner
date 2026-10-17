@@ -180,6 +180,31 @@ components:
       required:
       - instanceId
       - instance
+    ListInstancesResponse:
+      type: object
+      properties:
+        instances:
+          type: array
+          items:
+            $ref: '#/components/schemas/Instance'
+        nextPageToken:
+          type: string
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+        metadata:
+          type: object
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
     Instance:
       type: object
       properties:
@@ -214,31 +239,6 @@ components:
         updateTime:
           type: string
           format: date-time
-    ListInstancesResponse:
-      type: object
-      properties:
-        instances:
-          type: array
-          items:
-            $ref: '#/components/schemas/Instance'
-        nextPageToken:
-          type: string
-    Operation:
-      type: object
-      properties:
-        name:
-          type: string
-        done:
-          type: boolean
-        metadata:
-          type: object
-        error:
-          type: object
-          properties:
-            code:
-              type: integer
-            message:
-              type: string
     UpdateInstanceRequest:
       type: object
       properties:

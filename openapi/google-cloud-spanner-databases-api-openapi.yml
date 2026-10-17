@@ -152,35 +152,6 @@ paths:
         - https://www.googleapis.com/auth/spanner.admin
 components:
   schemas:
-    CreateDatabaseRequest:
-      type: object
-      properties:
-        createStatement:
-          type: string
-        extraStatements:
-          type: array
-          items:
-            type: string
-        databaseDialect:
-          type: string
-      required:
-      - createStatement
-    Operation:
-      type: object
-      properties:
-        name:
-          type: string
-        done:
-          type: boolean
-        metadata:
-          type: object
-        error:
-          type: object
-          properties:
-            code:
-              type: integer
-            message:
-              type: string
     Database:
       type: object
       properties:
@@ -209,6 +180,22 @@ components:
           - DATABASE_DIALECT_UNSPECIFIED
           - GOOGLE_STANDARD_SQL
           - POSTGRESQL
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+        metadata:
+          type: object
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
     ListDatabasesResponse:
       type: object
       properties:
@@ -218,6 +205,19 @@ components:
             $ref: '#/components/schemas/Database'
         nextPageToken:
           type: string
+    CreateDatabaseRequest:
+      type: object
+      properties:
+        createStatement:
+          type: string
+        extraStatements:
+          type: array
+          items:
+            type: string
+        databaseDialect:
+          type: string
+      required:
+      - createStatement
   securitySchemes:
     oauth2:
       type: oauth2
