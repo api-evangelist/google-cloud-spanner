@@ -1,4 +1,4 @@
-# Google Cloud Spanner (google-cloud-spanner)
+# Google Cloud Spanner
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,67 +66,156 @@
 
 Google Cloud Spanner is a fully managed, mission-critical relational database service that offers transactional consistency at global scale, automatic synchronous replication, and schemas with SQL support. It combines the benefits of relational database structure with non-relational horizontal scale, providing up to 99.999% availability.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-cloud-spanner/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-cloud-spanner/refs/heads/main/apis.yml)
+**Areas:** Database · Distributed · Google Cloud · Relational · SQL
 
-## Scope
+## Google Cloud Spanner on APIs.io
 
-- **Type:** Index
+Everything profiled for Google Cloud Spanner is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-cloud-spanner/](https://apis.io/providers/google-cloud-spanner/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- Database
-- Distributed
-- Google Cloud
-- Relational
-- SQL
+- [Google Cloud Spanner Databases API](https://apis.io/apis/google-cloud-spanner/google-cloud-spanner-databases-api/) — Operations on Spanner databases
+- [Google Cloud Spanner Instances API](https://apis.io/apis/google-cloud-spanner/google-cloud-spanner-instances-api/) — Operations on Spanner instances
+- [Google Cloud Spanner Sessions API](https://apis.io/apis/google-cloud-spanner/google-cloud-spanner-sessions-api/) — Operations on database sessions
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Cloud Spanner API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Cloud Spanner API provides programmatic access to manage Cloud Spanner instances, databases, and sessions. It supports creating and configuring globally distributed database infrastructure, executing SQL queries and DML statements, managing transactions with strong consistency guarantees, and handling database backups and restore operations.
+- [Google Cloud Spanner Agentic Access](https://apis.io/agentic-access/google-cloud-spanner/google-cloud-spanner-agentic-access/)
 
-- **Human URL:** [https://cloud.google.com/spanner/docs](https://cloud.google.com/spanner/docs)
-- **Base URL:** `https://spanner.googleapis.com/v1`
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Database
-- Instances
-- SQL
-- Transactions
+- [Google Cloud Spanner Instance](https://apis.io/schemas/google-cloud-spanner/instance/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://cloud.google.com/spanner/docs/reference/rest)
-- [OpenAPI](openapi/cloud-spanner-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/cloud-spanner.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloud-spanner.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Authentication](https://cloud.google.com/spanner/docs/authentication)
-- [Getting Started](https://cloud.google.com/spanner/docs/getting-started/rest)
-- [JSON Schema](json-schema/instance-schema.json) — [JSON Schema](https://json-schema.org/specification)
+Linked-data contexts for the provider's vocabulary.
 
-## Common Properties
+- [Google Cloud Spanner Context](https://apis.io/jsonld/google-cloud-spanner/google-cloud-spanner-context/)
 
-- [GitHub Organization](https://github.com/GoogleCloudPlatform)
-- [Portal](https://cloud.google.com/spanner)
-- [Getting Started](https://cloud.google.com/spanner/docs/getting-started/rest)
+#### Collections (7)
+
+Postman and Open Collection request collections.
+
+- [Google Cloud Spanner API](https://apis.io/collections/google-cloud-spanner/open-cloud-spanner/)
+- [Google Cloud Spanner Databases API](https://apis.io/collections/google-cloud-spanner/open-google-cloud-spanner-databases-api/)
+- [Google Cloud Spanner Databases Instances API](https://apis.io/collections/google-cloud-spanner/open-google-cloud-spanner-instances-api/)
+- [Google Cloud Spanner Databases Sessions API](https://apis.io/collections/google-cloud-spanner/open-google-cloud-spanner-sessions-api/)
+- [Google Cloud Spanner Databases API](https://apis.io/collections/google-cloud-spanner/postman-google-cloud-spanner-databases-api/)
+- [Google Cloud Spanner Databases Instances API](https://apis.io/collections/google-cloud-spanner/postman-google-cloud-spanner-instances-api/)
+- [Google Cloud Spanner Databases Sessions API](https://apis.io/collections/google-cloud-spanner/postman-google-cloud-spanner-sessions-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Cloud Spanner — jsonschema rules](https://apis.io/rules/google-cloud-spanner/google-cloud-spanner-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Cloud Spanner Authentication](https://apis.io/security/google-cloud-spanner/google-cloud-spanner-authentication/)
+- [Google Cloud Spanner Domain Security](https://apis.io/security/google-cloud-spanner/google-cloud-spanner-domain-security/)
+- [Google Cloud Spanner Vulnerability Disclosure](https://apis.io/security/google-cloud-spanner/google-cloud-spanner-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Google Cloud Spanner Scopes](https://apis.io/scopes/google-cloud-spanner/google-cloud-spanner-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Cloud Spanner Plans Pricing](https://apis.io/plans/google-cloud-spanner/google-cloud-spanner-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Cloud Spanner Rate Limits](https://apis.io/rate-limits/google-cloud-spanner/google-cloud-spanner-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Cloud Spanner Finops](https://apis.io/finops/google-cloud-spanner/google-cloud-spanner-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
 - [Documentation](https://cloud.google.com/spanner/docs)
-- [Authentication](https://cloud.google.com/spanner/docs/authentication)
+- [Getting started](https://cloud.google.com/spanner/docs/getting-started/rest)
 - [Pricing](https://cloud.google.com/spanner/pricing)
-- [Terms of Service](https://cloud.google.com/terms)
-- [Privacy Policy](https://policies.google.com/privacy)
-- [Status Page](https://status.cloud.google.com/)
 - [Support](https://cloud.google.com/spanner/docs/support)
-- [JSON-LD](json-ld/google-cloud-spanner-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Integrations](https://cloud.google.com/marketplace)
+- [Blog](https://cloud.google.com/feeds/spanner-release-notes.xml)
+- [Terms of service](https://cloud.google.com/terms)
+- [Privacy policy](https://policies.google.com/privacy)
+- [GitHub](https://github.com/GoogleCloudPlatform)
+- [Status](https://status.cloud.google.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 48.4** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 58.7 |
+| Contract governance | 9.8 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 51.2 |
+| Access clarity | 39.5 |
+
+**Agent readiness 24.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-cloud-spanner/](https://apis.io/providers/google-cloud-spanner/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Cloud Spanner: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-cloud-spanner/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
